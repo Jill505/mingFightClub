@@ -277,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &385773339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1599,7 +1599,7 @@ GameObject:
   - component: {fileID: 1338827676}
   m_Layer: 0
   m_Name: 'Southeastern '
-  m_TagString: 'LandSoutheastern '
+  m_TagString: LandSoutheastern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1716,7 +1716,7 @@ GameObject:
   - component: {fileID: 1378119849}
   m_Layer: 0
   m_Name: 'Tainan '
-  m_TagString: 'LandTainan '
+  m_TagString: LandTainan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2121,7 +2121,7 @@ GameObject:
   - component: {fileID: 1527715204}
   m_Layer: 0
   m_Name: 'Annan '
-  m_TagString: 'LandAnnan '
+  m_TagString: LandAnnan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2379,7 +2379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2031026938
 RectTransform:
   m_ObjectHideFlags: 0

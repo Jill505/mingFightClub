@@ -8,14 +8,14 @@ TagManager:
   - LandXinhua
   - LandGuiren
   - LandYongkang
-  - 'LandSoutheastern '
-  - 'LandTainan '
-  - 'LandAnnan '
   - LandJiali
   - LandMadou
   - LandYanshui
   - LandBaihe
   - LandYujing
+  - LandSoutheastern
+  - LandAnnan
+  - LandTainan
   layers:
   - Default
   - TransparentFX
