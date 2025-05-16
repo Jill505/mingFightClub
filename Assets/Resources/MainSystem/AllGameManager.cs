@@ -123,7 +123,7 @@ public class PlayerData
 public class LandData
 {
     public int Ignore = 0;//³WÁ×ÅÜ¼Æ
-    public Land[] lands = new Land[37];
+    public Land[] lands = new Land[11];
 }
 [SerializeField]
 public class Land
