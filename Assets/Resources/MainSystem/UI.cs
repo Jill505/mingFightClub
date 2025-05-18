@@ -5,27 +5,74 @@ using System;
 
 public class UI : MonoBehaviour
 {
+    [Header("啟動與地圖")]
     [SerializeField] Button StartButton;
     [SerializeField] GameObject StartMenu;
     [SerializeField] GameObject TainanMap;
+
+    [Header("各區域地圖面板")]
+    [SerializeField] GameObject XinhuaMenu;
+    [SerializeField] GameObject GuirenMenu;
+    [SerializeField] GameObject YongkangMenu;
+    [SerializeField] GameObject SoutheasternMenu;
+    [SerializeField] GameObject TainanMenu;
+    [SerializeField] GameObject AnnanMenu;
+    [SerializeField] GameObject JialiMenu;
+    [SerializeField] GameObject MadouMenu;
+    [SerializeField] GameObject YanshuiMenu;
+    [SerializeField] GameObject BaiheMenu;
+    [SerializeField] GameObject YujingMenu;
+
+    [Header("各區域關閉按鈕")]
+    [SerializeField] Button XinhuaExit;
+    [SerializeField] Button GuirenExit;
+    [SerializeField] Button YongkangExit;
+    [SerializeField] Button SoutheasternExit;
+    [SerializeField] Button TainanExit;
+    [SerializeField] Button AnnanExit;
+    [SerializeField] Button JialiExit;
+    [SerializeField] Button MadouExit;
+    [SerializeField] Button YanshuiExit;
+    [SerializeField] Button BaiheExit;
+    [SerializeField] Button YujingExit;
+
     private Dictionary<string, Action> tagActions;//字典資料結構
 
     private void Start()
     {
         tagActions = new Dictionary<string, Action>//根據不同Tag，被點擊後會有不同的動作
         {
-            { "LandXinhua",      () => Debug.Log("Xinhua！") },
-            { "LandGuiren",      () => Debug.Log("Guiren！") },
-            { "LandYongkang",    () => Debug.Log("Yongkang！") },
-            { "LandSoutheastern",() => Debug.Log("Southeastern！") },
-            { "LandTainan",      () => Debug.Log("Tainan！") },
-            { "LandAnnan",       () => Debug.Log("Annan！") },
-            { "LandJiali",       () => Debug.Log("Jiali！") },
-            { "LandMadou",       () => Debug.Log("Madou！") },
-            { "LandYanshui",     () => Debug.Log("Yanshui！") },
-            { "LandBaihe",       () => Debug.Log("Baihe！") },
-            { "LandYujing",      () => Debug.Log("Yujing！") }
+            { "LandXinhua",      () => XinhuaMenu.SetActive(true) },
+            { "LandGuiren",       () => GuirenMenu.SetActive(true) },
+            { "LandYongkang",     () => YongkangMenu.SetActive(true) },
+            { "LandSoutheastern", () => SoutheasternMenu.SetActive(true) },
+            { "LandTainan",       () => TainanMenu.SetActive(true) },
+            { "LandAnnan",        () => AnnanMenu.SetActive(true) },
+            { "LandJiali",        () => JialiMenu.SetActive(true) },
+            { "LandMadou",        () => MadouMenu.SetActive(true) },
+            { "LandYanshui",      () => YanshuiMenu.SetActive(true) },
+            { "LandBaihe",        () => BaiheMenu.SetActive(true) },
+            { "LandYujing",       () => YujingMenu.SetActive(true) }
         };
+
+        Button[] exits =
+        {
+            XinhuaExit, GuirenExit, YongkangExit, SoutheasternExit,
+            TainanExit, AnnanExit, JialiExit, MadouExit,
+            YanshuiExit, BaiheExit, YujingExit
+        };
+        GameObject[] menus =
+        {
+            XinhuaMenu, GuirenMenu, YongkangMenu, SoutheasternMenu,
+            TainanMenu, AnnanMenu, JialiMenu, MadouMenu,
+            YanshuiMenu, BaiheMenu, YujingMenu
+        };
+
+        for (int i = 0; i < exits.Length; i++)
+        {
+            var menu = menus[i]; // 用 local 變數避免閉包問題
+            exits[i].onClick.AddListener(() => menu.SetActive(false));
+        }
     }
 
     private void Update()
