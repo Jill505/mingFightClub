@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using static SaveFile;
 
 public class UI : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class UI : MonoBehaviour
     [SerializeField] Button StartButton;
     [SerializeField] GameObject StartMenu;
     [SerializeField] GameObject TainanMap;
+    [SerializeField] AllGameManager allGameManager;
 
     [Header("各區域地圖面板")]
     [SerializeField] GameObject XinhuaMenu;

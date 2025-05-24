@@ -3007,6 +3007,7 @@ MonoBehaviour:
   StartButton: {fileID: 505178145}
   StartMenu: {fileID: 2031026937}
   TainanMap: {fileID: 385773338}
+  allGameManager: {fileID: 562451514}
   XinhuaMenu: {fileID: 608113989}
   GuirenMenu: {fileID: 423249553}
   YongkangMenu: {fileID: 475160787}
