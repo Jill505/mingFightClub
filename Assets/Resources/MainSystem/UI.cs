@@ -44,17 +44,17 @@ public class UI : MonoBehaviour
     {
         tagActions = new Dictionary<string, Action>//根據不同Tag，被點擊後會有不同的動作
         {
-            { "LandXinhua",      () => XinhuaMenu.SetActive(true) },
-            { "LandGuiren",       () => GuirenMenu.SetActive(true) },
-            { "LandYongkang",     () => YongkangMenu.SetActive(true) },
-            { "LandSoutheastern", () => SoutheasternMenu.SetActive(true) },
-            { "LandTainan",       () => TainanMenu.SetActive(true) },
-            { "LandAnnan",        () => AnnanMenu.SetActive(true) },
-            { "LandJiali",        () => JialiMenu.SetActive(true) },
-            { "LandMadou",        () => MadouMenu.SetActive(true) },
-            { "LandYanshui",      () => YanshuiMenu.SetActive(true) },
-            { "LandBaihe",        () => BaiheMenu.SetActive(true) },
-            { "LandYujing",       () => YujingMenu.SetActive(true) }
+            { "LandXinhua",      () => { TainanMap.SetActive(false); XinhuaMenu.SetActive(true); } },
+            { "LandGuiren",      () => { TainanMap.SetActive(false); GuirenMenu.SetActive(true); } },
+            { "LandYongkang",    () => { TainanMap.SetActive(false); YongkangMenu.SetActive(true); } },
+            { "LandSoutheastern",() => { TainanMap.SetActive(false); SoutheasternMenu.SetActive(true); } },
+            { "LandTainan",      () => { TainanMap.SetActive(false); TainanMenu.SetActive(true); } },
+            { "LandAnnan",       () => { TainanMap.SetActive(false); AnnanMenu.SetActive(true); } },
+            { "LandJiali",       () => { TainanMap.SetActive(false); JialiMenu.SetActive(true); } },
+            { "LandMadou",       () => { TainanMap.SetActive(false); MadouMenu.SetActive(true); } },
+            { "LandYanshui",     () => { TainanMap.SetActive(false); YanshuiMenu.SetActive(true); } },
+            { "LandBaihe",       () => { TainanMap.SetActive(false); BaiheMenu.SetActive(true); } },
+            { "LandYujing",      () => { TainanMap.SetActive(false); YujingMenu.SetActive(true); } }
         };
 
         Button[] exits =
@@ -73,7 +73,11 @@ public class UI : MonoBehaviour
         for (int i = 0; i < exits.Length; i++)
         {
             var menu = menus[i]; // 用 local 變數避免閉包問題
-            exits[i].onClick.AddListener(() => menu.SetActive(false));
+            exits[i].onClick.AddListener(() =>
+            {
+                menu.SetActive(false);
+                TainanMap.SetActive(true);
+            });
         }
     }
 
