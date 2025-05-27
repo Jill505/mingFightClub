@@ -1,9 +1,10 @@
+using System;
 using System.IO;
 using UnityEngine;
 
 public class AllGameManager : MonoBehaviour
 {
-    public SaveFile saveFile;
+    public SaveFile saveFile = new SaveFile();
 
     private void Awake()
     {
@@ -21,7 +22,7 @@ public class AllGameManager : MonoBehaviour
     }
 }
 
-[SerializeField]
+[Serializable]
 public class SaveFile
 {
     public SaveFile safeFile;
@@ -31,35 +32,39 @@ public class SaveFile
 
     public void SaveTheFile()
     {
+        Debug.Log("儲存");
         string jsonString = JsonUtility.ToJson(safeFile);
         File.WriteAllText(Application.persistentDataPath + "/SaveFile.json", jsonString);
     }
 
     public void LoadTheFile()
     {
-        SaveFile saveFile;
+        //SaveFile saveFile;
 
         string path = Application.persistentDataPath + "/SaveFile.json";
-
+        Debug.Log("載入檔案");
+        
         // 檢查檔案是否存在
         if (File.Exists(path))
         {
+            Debug.Log("開始載入");
             string jsonString = File.ReadAllText(path);
             SaveFile swapSaveFile = JsonUtility.FromJson<SaveFile>(jsonString);
-            saveFile = swapSaveFile;
+            safeFile = swapSaveFile;
         }
         else
         {
             // 若檔案不存在，初始化 saveFile
-            saveFile = new SaveFile();
+            Debug.Log("沒有獨到 初始化存檔");
+            safeFile = new SaveFile();
 
             // 可選：立即將初始化的 saveFile 存檔
-            string json = JsonUtility.ToJson(saveFile, true);
+            string json = JsonUtility.ToJson(safeFile, true);
             File.WriteAllText(path, json);
         }
     }
 
-    [SerializeField]
+    [Serializable]
     public class PlayerData
     {
         public int population = -10;
@@ -77,13 +82,13 @@ public class SaveFile
         }
     }
 
-    [SerializeField]
+    [Serializable]
     public class LandData
     {
         public int Ignore = 0;//規避變數
         public Land[] lands = new Land[11];
     }
-    [SerializeField]
+    [Serializable]
     public class Land
     {
         public bool unlock = false;
@@ -119,7 +124,7 @@ public class SaveFile
         }
     }
 
-    [SerializeField]
+    [Serializable]
     public class Gang
     {
         public string GangName = "初始化失敗宗親會";

@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using static SaveFile;
+using System.Security.Cryptography.X509Certificates;
+using TMPro;
 
 public class UI : MonoBehaviour
 {
@@ -12,73 +14,129 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject TainanMap;
     [SerializeField] AllGameManager allGameManager;
 
-    [Header("各區域地圖面板")]
-    [SerializeField] GameObject XinhuaMenu;
-    [SerializeField] GameObject GuirenMenu;
-    [SerializeField] GameObject YongkangMenu;
-    [SerializeField] GameObject SoutheasternMenu;
-    [SerializeField] GameObject TainanMenu;
-    [SerializeField] GameObject AnnanMenu;
-    [SerializeField] GameObject JialiMenu;
-    [SerializeField] GameObject MadouMenu;
-    [SerializeField] GameObject YanshuiMenu;
-    [SerializeField] GameObject BaiheMenu;
-    [SerializeField] GameObject YujingMenu;
+    [Header("區域面板")]
+    public GameObject LandShowcase;
 
-    [Header("各區域關閉按鈕")]
-    [SerializeField] Button XinhuaExit;
-    [SerializeField] Button GuirenExit;
-    [SerializeField] Button YongkangExit;
-    [SerializeField] Button SoutheasternExit;
-    [SerializeField] Button TainanExit;
-    [SerializeField] Button AnnanExit;
-    [SerializeField] Button JialiExit;
-    [SerializeField] Button MadouExit;
-    [SerializeField] Button YanshuiExit;
-    [SerializeField] Button BaiheExit;
-    [SerializeField] Button YujingExit;
+    [Header("地區資料顯示")]
+    public Image showLandMapImage;
+    public Text landName;
 
-    private Dictionary<string, Action> tagActions;//字典資料結構
+    public Image landMoneyBuildingImage;
+    public Image landPopulationBuildingImage;
+    public Image landCultureBuildingImage;
+
+    public Text landMoneyBuildingText;
+    public Text landPopulationBuildingText;
+    public Text landCultureBuildingText;
+
+    public Text obj_landMoneyBuildingText;
+    public Text obj_landPopulationBuildingText;
+    public Text obj_landCultureBuildingText;
+
+    public Button moneyBuyButton;
+    public Button populationBuyButton;
+    public Button cultureBuyButton;
+
+    [Header("傳入值")]
+    public LandInformation loadingLandInformation;
+
+    private void Awake()
+    {
+        if (allGameManager == null)
+        {
+            allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
+        }
+    }
+
+    public void LoadLandInformationContext(LandInformation info)
+    {
+        showLandMapImage.sprite = info.landMap;
+        landName.text = info.landName;
+
+        landMoneyBuildingImage.sprite = info.landMoneyBuilding;
+        landPopulationBuildingImage.sprite = info.landPopulationBuilding;
+        landCultureBuildingImage.sprite = info.landCultureBuilding;
+
+        landMoneyBuildingText.text = info.landMoneyBuildingText;
+        landPopulationBuildingText.text = info.landPopulationBuildingText;
+        landCultureBuildingText.text = info.landCultureBuildingText;
+
+        obj_landMoneyBuildingText.text = info.obj_landMoneyBuildingText;
+        obj_landPopulationBuildingText.text = info.obj_landPopulationBuildingText;
+        obj_landCultureBuildingText.text = info.obj_landCultureBuildingText;
+    }
+
+
+    public void buyLandBuilding(int sort) // 0 = money building, 1 = population building, 2 = culture building.
+    {
+        if (sort == 0)
+        {
+            if (allGameManager.saveFile.playerData.money >= loadingLandInformation.landMoneyBuildingPrice)
+            {
+                //allow player buy the building
+                allGameManager.saveFile.playerData.money -= loadingLandInformation.landMoneyBuildingPrice;
+                loadingLandInformation.unlockAlreadyLandMoneyBuilding = true;
+            }
+        }
+
+        if (sort == 1)
+        {
+            if (allGameManager.saveFile.playerData.money >= loadingLandInformation.landPopulationBuildingPrice)
+            {
+                allGameManager.saveFile.playerData.money -= loadingLandInformation.landPopulationBuildingPrice;
+                loadingLandInformation.unlockAlreadyLandPopulationBuilding = true;
+            }
+        }
+
+        if (sort == 2)
+        {
+            if (allGameManager.saveFile.playerData.money >= loadingLandInformation.landCultureBuildingPrice)
+            {
+                allGameManager.saveFile.playerData.money -= loadingLandInformation.landCultureBuildingPrice;
+                loadingLandInformation.unlockAlreadyLandCultureBuilding = true;
+            }
+        }
+        buttonStateCheck();
+    }
+
+    public void buttonStateCheck()
+    {
+        if (loadingLandInformation.unlockAlreadyLandMoneyBuilding == true)
+        {
+            moneyBuyButton.interactable = false;
+        }
+        else
+        {
+            moneyBuyButton.interactable = true;
+        }
+
+        if (loadingLandInformation.unlockAlreadyLandPopulationBuilding == true)
+        {
+            populationBuyButton.interactable = false;
+        }
+        else
+        {
+            populationBuyButton.interactable = true;
+        }
+
+        if (loadingLandInformation.unlockAlreadyLandCultureBuilding == true)
+        {
+            cultureBuyButton.interactable = false;
+        }
+        else
+        {
+            cultureBuyButton.interactable = true;
+        }
+    }
+
+    public void closeMenu()
+    {
+        LandShowcase.SetActive(false);
+    }
 
     private void Start()
     {
-        tagActions = new Dictionary<string, Action>//根據不同Tag，被點擊後會有不同的動作
-        {
-            { "LandXinhua",      () => { TainanMap.SetActive(false); XinhuaMenu.SetActive(true); } },
-            { "LandGuiren",      () => { TainanMap.SetActive(false); GuirenMenu.SetActive(true); } },
-            { "LandYongkang",    () => { TainanMap.SetActive(false); YongkangMenu.SetActive(true); } },
-            { "LandSoutheastern",() => { TainanMap.SetActive(false); SoutheasternMenu.SetActive(true); } },
-            { "LandTainan",      () => { TainanMap.SetActive(false); TainanMenu.SetActive(true); } },
-            { "LandAnnan",       () => { TainanMap.SetActive(false); AnnanMenu.SetActive(true); } },
-            { "LandJiali",       () => { TainanMap.SetActive(false); JialiMenu.SetActive(true); } },
-            { "LandMadou",       () => { TainanMap.SetActive(false); MadouMenu.SetActive(true); } },
-            { "LandYanshui",     () => { TainanMap.SetActive(false); YanshuiMenu.SetActive(true); } },
-            { "LandBaihe",       () => { TainanMap.SetActive(false); BaiheMenu.SetActive(true); } },
-            { "LandYujing",      () => { TainanMap.SetActive(false); YujingMenu.SetActive(true); } }
-        };
-
-        Button[] exits =
-        {
-            XinhuaExit, GuirenExit, YongkangExit, SoutheasternExit,
-            TainanExit, AnnanExit, JialiExit, MadouExit,
-            YanshuiExit, BaiheExit, YujingExit
-        };
-        GameObject[] menus =
-        {
-            XinhuaMenu, GuirenMenu, YongkangMenu, SoutheasternMenu,
-            TainanMenu, AnnanMenu, JialiMenu, MadouMenu,
-            YanshuiMenu, BaiheMenu, YujingMenu
-        };
-
-        for (int i = 0; i < exits.Length; i++)
-        {
-            var menu = menus[i]; // 用 local 變數避免閉包問題
-            exits[i].onClick.AddListener(() =>
-            {
-                menu.SetActive(false);
-                TainanMap.SetActive(true);
-            });
-        }
+        buttonStateCheck();
     }
 
     private void Update()
@@ -90,10 +148,14 @@ public class UI : MonoBehaviour
             //判斷滑鼠點擊位置是否有Collider2D，並把結果存到hit
             Collider2D hit = Physics2D.OverlapPoint(mousePos);
 
-            //滑鼠點擊地方有觸發器，且在tagActions中有對應的Tag，則執行該Tag的特定動作
-            if (hit != null && tagActions.TryGetValue(hit.tag, out Action action))
+            if (hit != null && hit.gameObject.TryGetComponent<LandInformation>(out LandInformation info))
             {
-                action.Invoke();
+                LandShowcase.SetActive(true);
+                info.showContext();
+            }
+            else
+            {
+                Debug.Log("不是觸發區");
             }
         }
     }
