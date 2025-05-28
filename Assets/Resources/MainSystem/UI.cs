@@ -48,6 +48,32 @@ public class UI : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        buttonStateCheck();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))//滑鼠左鍵
+        {
+            //將滑鼠在螢幕的位置轉換成遊戲內的世界座標
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //判斷滑鼠點擊位置是否有Collider2D，並把結果存到hit
+            Collider2D hit = Physics2D.OverlapPoint(mousePos);
+
+            if (hit != null && hit.gameObject.TryGetComponent<LandInformation>(out LandInformation info))
+            {
+                LandShowcase.SetActive(true);
+                info.showContext();
+            }
+            else
+            {
+                Debug.Log("不是觸發區");
+            }
+        }
+    }
+
     public void LoadLandInformationContext(LandInformation info)
     {
         showLandMapImage.sprite = info.landMap;
@@ -101,6 +127,11 @@ public class UI : MonoBehaviour
 
     public void buttonStateCheck()
     {
+        if (loadingLandInformation == null)
+        {
+            return;
+        }
+
         if (loadingLandInformation.unlockAlreadyLandMoneyBuilding == true)
         {
             moneyBuyButton.interactable = false;
@@ -134,31 +165,6 @@ public class UI : MonoBehaviour
         LandShowcase.SetActive(false);
     }
 
-    private void Start()
-    {
-        buttonStateCheck();
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))//滑鼠左鍵
-        {
-            //將滑鼠在螢幕的位置轉換成遊戲內的世界座標
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //判斷滑鼠點擊位置是否有Collider2D，並把結果存到hit
-            Collider2D hit = Physics2D.OverlapPoint(mousePos);
-
-            if (hit != null && hit.gameObject.TryGetComponent<LandInformation>(out LandInformation info))
-            {
-                LandShowcase.SetActive(true);
-                info.showContext();
-            }
-            else
-            {
-                Debug.Log("不是觸發區");
-            }
-        }
-    }
 
     public void HideStartMenu()
     {
