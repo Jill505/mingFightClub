@@ -1526,6 +1526,7 @@ MonoBehaviour:
   StartButton: {fileID: 505178145}
   StartMenu: {fileID: 2031026937}
   TainanMap: {fileID: 385773338}
+  PlayerUIManager: {fileID: 1723892927}
   allGameManager: {fileID: 562451515}
   LandShowcase: {fileID: 866830640}
   showLandMapImage: {fileID: 102406501}
@@ -2237,8 +2238,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6d3093241330c9c4d96eed18044a84c6, type: 2}
+  m_sharedMaterial: {fileID: -8137504201191000795, guid: 6d3093241330c9c4d96eed18044a84c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2262,8 +2263,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2328,10 +2329,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 862417713}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -143, y: 137}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 143.59, y: 128.9469}
+  m_SizeDelta: {x: 287.17, y: 38.1766}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &803687941
 GameObject:
@@ -2693,7 +2694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3328,10 +3329,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 862417713}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -145, y: 193}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 143.58578, y: -15.7101}
+  m_SizeDelta: {x: 287.1716, y: 31.4203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1132707692
 CanvasRenderer:
@@ -3365,8 +3366,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6d3093241330c9c4d96eed18044a84c6, type: 2}
+  m_sharedMaterial: {fileID: -8137504201191000795, guid: 6d3093241330c9c4d96eed18044a84c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3390,8 +3391,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5570,10 +5571,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 619394802}
   - {fileID: 562451512}
   - {fileID: 697945516}
   - {fileID: 850204961}
   - {fileID: 385773340}
   - {fileID: 1100814304}
-  - {fileID: 619394802}
   - {fileID: 1723892929}

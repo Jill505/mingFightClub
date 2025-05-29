@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
     [SerializeField] Button StartButton;
     [SerializeField] GameObject StartMenu;
     [SerializeField] GameObject TainanMap;
+    [SerializeField] GameObject PlayerUIManager;
     [SerializeField] AllGameManager allGameManager;
 
     [Header("°Ï°ì­±ªO")]
@@ -65,6 +66,7 @@ public class UI : MonoBehaviour
             if (hit != null && hit.gameObject.TryGetComponent<LandInformation>(out LandInformation info))
             {
                 LandShowcase.SetActive(true);
+                TainanMap.SetActive(false);
                 info.showContext();
             }
             else
@@ -163,6 +165,7 @@ public class UI : MonoBehaviour
     public void closeMenu()
     {
         LandShowcase.SetActive(false);
+        TainanMap.SetActive(true);
     }
 
 
@@ -170,5 +173,6 @@ public class UI : MonoBehaviour
     {
         StartMenu.SetActive(false); //ÁôÂÃ StartMenu
         TainanMap.SetActive(true); //ÁôÂÃ StartMenu
+        PlayerUIManager.SetActive(true);
     }
 }
