@@ -7,10 +7,16 @@ public class PlayerStatusDisplay : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI populationText;
 
+
+    AllGameManager allGameManager;
+
+    private void Awake()
+    {
+        allGameManager = GameObject.Find("AllGameManager")?.GetComponent<AllGameManager>();
+    }
     private void Start()
     {
-        AllGameManager allGameManager = GameObject.Find("AllGameManager")?.GetComponent<AllGameManager>();
-        allGameManager.saveFile.playerData.playerSurname = "廖偉民";
+        allGameManager.saveFile.playerData.playerGang.GangName = "廖偉民";
         allGameManager.saveFile.playerData.InitializationPlayerData();
 
         if (allGameManager != null &&
@@ -18,7 +24,7 @@ public class PlayerStatusDisplay : MonoBehaviour
             allGameManager.saveFile.safeFile != null &&
             allGameManager.saveFile.safeFile.playerData != null)
         {
-            playerNameText.text = $"玩家姓名：{allGameManager.saveFile.playerData.playerSurname}";
+            playerNameText.text = $"玩家姓名：{allGameManager.saveFile.playerData.playerGang.GangName}";
             moneyText.text = $"金錢：{allGameManager.saveFile.playerData.money}元";
             populationText.text = $"人口數：\n{allGameManager.saveFile.playerData.population}";
         }
@@ -32,14 +38,12 @@ public class PlayerStatusDisplay : MonoBehaviour
 
     private void FixedUpdate()
     {
-        AllGameManager allGameManager = GameObject.Find("AllGameManager")?.GetComponent<AllGameManager>();
-
         if (allGameManager != null &&
             allGameManager.saveFile != null &&
             allGameManager.saveFile.safeFile != null &&
             allGameManager.saveFile.safeFile.playerData != null)
         {
-            playerNameText.text = $"玩家姓名：{allGameManager.saveFile.playerData.playerSurname}";
+            playerNameText.text = $"玩家姓名：{allGameManager.saveFile.playerData.playerGang.GangName}";
             moneyText.text = $"金錢：{allGameManager.saveFile.playerData.money}元";
             populationText.text = $"人口數：\n{allGameManager.saveFile.playerData.population}";
         }

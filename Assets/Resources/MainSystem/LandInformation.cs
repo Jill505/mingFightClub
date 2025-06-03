@@ -3,12 +3,23 @@ using System.ComponentModel.Design;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class LandInformation : MonoBehaviour
 {
+    [Header("基本宣告")]
     public AllGameManager allGameManager;
 
+    [Header("土地持有者")]
+    public bool attackAble = false;
+    public bool unlock = false;
+    public Gang belongingGang;
+
+    [Header("接壤土地")]
+    public string[] attLand = new string[10];
+
+    [Header("土地資訊")]
     public string landName = "歡連縣";
     public Sprite landMap;
 
@@ -29,6 +40,20 @@ public class LandInformation : MonoBehaviour
     public Sprite landCultureBuilding;
     public int landCultureBuildingPrice = 150;
     public bool unlockAlreadyLandCultureBuilding = false;
+
+    public Land returnLand()
+    {
+        Land swapLand = new Land();
+        swapLand.unlock = unlock;
+        swapLand.buildingUnlockA = unlockAlreadyLandPopulationBuilding;
+        swapLand.buildingUnlockB = unlockAlreadyLandCultureBuilding;
+        swapLand.buildingUnlockC = unlockAlreadyLandMoneyBuilding;
+
+        //TODO: Fix Gang Having Problem
+
+        return swapLand;
+    }
+
 
     public void Awake()
     {

@@ -68,6 +68,8 @@ public class UI : MonoBehaviour
                 LandShowcase.SetActive(true);
                 TainanMap.SetActive(false);
                 info.showContext();
+
+                allGameManager.inGameManager.JudgeLandAttackable();
             }
             else
             {

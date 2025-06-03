@@ -5,7 +5,7 @@ using UnityEngine;
 public class AllGameManager : MonoBehaviour
 {
     public SaveFile saveFile = new SaveFile();
-
+    public InGameManager inGameManager = new InGameManager();   
     private void Awake()
     {
         saveFile.LoadTheFile();
@@ -29,6 +29,7 @@ public class SaveFile
 
     public PlayerData playerData = new PlayerData(); //實例化
     public LandData landData = new LandData();
+    public GangData gangData = new GangData();
 
     public void SaveTheFile()
     {
@@ -43,7 +44,7 @@ public class SaveFile
 
         string path = Application.persistentDataPath + "/SaveFile.json";
         Debug.Log("載入檔案");
-        
+
         // 檢查檔案是否存在
         if (File.Exists(path))
         {
@@ -63,17 +64,14 @@ public class SaveFile
             File.WriteAllText(path, json);
         }
     }
-
+}
     [Serializable]
     public class PlayerData
     {
         public int population = -10;
         public int money = -10;
 
-        /// <summary>
-        /// 出現"洩"時，代表預設資料錯誤
-        /// </summary>
-        public string playerSurname = "洩";
+        public PlayerGang playerGang;
 
         public void InitializationPlayerData()
         {
@@ -91,6 +89,8 @@ public class SaveFile
     [Serializable]
     public class Land
     {
+    public string areaName = "山";
+
         public bool unlock = false;
         public string belongingGang = null;
 
@@ -124,9 +124,25 @@ public class SaveFile
         }
     }
 
-    [Serializable]
-    public class Gang
-    {
-        public string GangName = "初始化失敗宗親會";
-    }
+[Serializable]
+public class Gang
+{
+    public string GangName = "預設姓";
+    public int pop = 1;
+    public int cult = 1;
+        
+    public Land[] myLands = new Land[11]; 
+}
+
+[Serializable]
+public class PlayerGang : Gang
+{
+
+}
+
+[Serializable]
+public class GangData
+{
+    int IWANTTOSLEEP;
+    public Gang[] gangs = new Gang[15];
 }
