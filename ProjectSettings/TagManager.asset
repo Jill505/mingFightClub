@@ -16,6 +16,7 @@ TagManager:
   - LandSoutheastern
   - LandAnnan
   - LandTainan
+  - Flag
   layers:
   - Default
   - TransparentFX
