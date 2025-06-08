@@ -37,6 +37,7 @@ public class UI : MonoBehaviour
     public Button moneyBuyButton;
     public Button populationBuyButton;
     public Button cultureBuyButton;
+    public Button attackButton;
 
     [Header("¶Ç¤J­È")]
     public LandInformation loadingLandInformation;
@@ -94,6 +95,9 @@ public class UI : MonoBehaviour
         obj_landMoneyBuildingText.text = info.obj_landMoneyBuildingText;
         obj_landPopulationBuildingText.text = info.obj_landPopulationBuildingText;
         obj_landCultureBuildingText.text = info.obj_landCultureBuildingText;
+
+        bool isOwned = info.CompareTag("Player");
+        attackButton.gameObject.SetActive(!isOwned);
     }
 
 

@@ -1959,6 +1959,7 @@ MonoBehaviour:
   moneyBuyButton: {fileID: 1541791005}
   populationBuyButton: {fileID: 177609804}
   cultureBuyButton: {fileID: 1264988234}
+  attackButton: {fileID: 522640593}
   loadingLandInformation: {fileID: 0}
 --- !u!114 &562451514
 MonoBehaviour:
