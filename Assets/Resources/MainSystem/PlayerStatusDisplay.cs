@@ -38,14 +38,14 @@ public class PlayerStatusDisplay : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (allGameManager != null &&
+        /*if (allGameManager != null &&
             allGameManager.saveFile != null &&
             allGameManager.saveFile.safeFile != null &&
             allGameManager.saveFile.safeFile.playerData != null)
-        {
+        {*/
             playerNameText.text = $"玩家姓名：{allGameManager.saveFile.playerData.playerGang.GangName}";
             moneyText.text = $"金錢：{allGameManager.saveFile.playerData.money}元";
             populationText.text = $"人口數：\n{allGameManager.saveFile.playerData.population}";
-        }
+       /* }*/
     }
 }

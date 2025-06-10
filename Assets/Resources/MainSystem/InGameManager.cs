@@ -9,7 +9,23 @@ public class InGameManager : MonoBehaviour
 
     public void JudgeLandAttackable()
     {
-        for (int i = 0; i < 11; i++)
+        ///
+        ///   1. run完這個program，鄰近的區域可以被攻打，反之
+        ///
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*for (int i = 0; i < 11; i++)
         {
             for (int j = 0; j < LandInfos[i].attLand.Length; j++)
             {
@@ -29,7 +45,7 @@ public class InGameManager : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
     }
 
     private void SyncLamdInfosToSaveData()

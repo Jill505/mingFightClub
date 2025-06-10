@@ -71,6 +71,22 @@ public class UI : MonoBehaviour
                 info.showContext();
 
                 allGameManager.inGameManager.JudgeLandAttackable();
+                /*if (info.attackAble == true)
+                {
+                    attackButton.interactable = true; 
+                }
+                else
+                {
+                    attackButton.interactable= false;
+                }*/
+                for (int i = 0; i < allGameManager.saveFile.playerData.playerGang.myLands.Length; i++)
+                {
+                    if (allGameManager.saveFile.playerData.playerGang.myLands[i].areaName == info.landName)
+                    {
+                        attackButton.interactable = false;
+                        info.Flag.SetActive(true);
+                    }
+                }
             }
             else
             {

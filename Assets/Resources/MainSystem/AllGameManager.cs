@@ -1,6 +1,8 @@
 using System;
 using System.IO;
+using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AllGameManager : MonoBehaviour
 {
@@ -33,7 +35,7 @@ public class SaveFile
 
     public void SaveTheFile()
     {
-        Debug.Log("儲存");
+        //Debug.Log("儲存");
         string jsonString = JsonUtility.ToJson(safeFile);
         File.WriteAllText(Application.persistentDataPath + "/SaveFile.json", jsonString);
     }
@@ -89,10 +91,13 @@ public class SaveFile
     [Serializable]
     public class Land
     {
-    public string areaName = "山";
+        public string areaName = "山";
 
         public bool unlock = false;
-        public string belongingGang = null;
+        public string belongingGang = null;//屬於的幫派
+
+        public int landPopulation = 100;
+        public int landMoney = 30;
 
         /// <summary>
         /// 人口設施
@@ -128,10 +133,50 @@ public class SaveFile
 public class Gang
 {
     public string GangName = "預設姓";
-    public int pop = 1;
-    public int cult = 1;
+    public int pop = 100;
+    public int cult = 100;
+    public int money = 30;
         
     public Land[] myLands = new Land[11]; 
+
+    public void IncreseForEachTurn()
+    {
+        Debug.Log("幫派增加，我有被觸發！");
+        pop =  (int)(pop * 1.4f);
+        money = (int)(money * 1.4f);
+    }
+
+    public void GangOut()
+    {
+        //TODO: 實作幫派被完全打敗
+        PlayerData playerData = GameObject.Find("AllGameManager").GetComponent<AllGameManager>().saveFile.playerData;
+        Land[] AllLands = GameObject.Find("AllGameManager").GetComponent<AllGameManager>().saveFile.landData.lands;
+        for (int i = 0; i < AllLands.Length; i++)
+        {
+            if (AllLands[i].belongingGang == GangName)
+            {
+                AllLands[i].belongingGang = playerData.playerGang.GangName;
+        
+            }
+        }
+        for (int i = 0; i < GameObject.Find("AllGameManager").GetComponent<AllGameManager>().saveFile.gangData.gangs.Length; i++)
+        {
+            GameObject.Find("AllGameManager").GetComponent<AllGameManager>().saveFile.gangData.gangs[i].RegistLandData();
+        }
+    }
+
+    public void RegistLandData()
+    {
+        Land[] AllLands = GameObject.Find("AllGameManager").GetComponent<AllGameManager>().saveFile.landData.lands;
+        for (int i = 0; i < AllLands.Length; i++)
+        {
+            if (AllLands[i].belongingGang == GangName)
+            {
+                myLands[i] = AllLands[i];
+            }
+        }
+    }
+
 }
 
 [Serializable]
@@ -144,5 +189,5 @@ public class PlayerGang : Gang
 public class GangData
 {
     int IWANTTOSLEEP;
-    public Gang[] gangs = new Gang[15];
+    public Gang[] gangs = new Gang[11];
 }

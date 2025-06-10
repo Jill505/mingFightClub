@@ -41,6 +41,10 @@ public class LandInformation : MonoBehaviour
     public int landCultureBuildingPrice = 150;
     public bool unlockAlreadyLandCultureBuilding = false;
 
+    [Header("Flag")]
+    public GameObject Flag;
+
+
     public Land returnLand()
     {
         Land swapLand = new Land();

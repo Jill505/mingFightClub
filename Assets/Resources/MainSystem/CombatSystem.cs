@@ -1,17 +1,43 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CoroutineExample : MonoBehaviour
 {
+    public Text CombatShowText;
+
+
+
     void Start()
     {
         // 啟動協程
         //StartCoroutine(Fighting());
+        //Debug.Log("我在喔，我叫CombatSystem");
+        //Debug.Log("我掛載在" + gameObject.name + "上");
     }
 
-    IEnumerator Fighting(int myPop, int emenyPop)
+    public void CallFight(Gang myGang, Gang enemyGang)
     {
-        while (myPop > 0 && emenyPop > 0)
+        StartCoroutine(Fighting(myGang, enemyGang));
+    }
+
+    public void CombatResultJudgement(Gang myGang, Gang enemyGang)
+    {
+        if (myGang.pop <= 0)
+        {
+            //All Game Over 全局遊戲結束
+            //TODO: 出現遊戲失敗介面，準備重製遊戲
+        }
+        if (enemyGang.pop <= 0)
+        {
+            enemyGang.GangOut();
+        }
+    }
+
+
+    IEnumerator Fighting(Gang myGang, Gang enemyGang)
+    {
+        while (myGang.pop> 0 && enemyGang.pop> 0)
         {
             int res = Random.Range(0, 15); // 產生 0 到 14 的整數
 
@@ -19,6 +45,7 @@ public class CoroutineExample : MonoBehaviour
             {
                 case 0:
                     Debug.Log("0：敵人閃避了攻擊！");
+                    CombatShowText.text = "敵人閃避了攻擊！";
                     break;
                 case 1:
                     Debug.Log("1：你造成了輕微傷害。");
@@ -66,5 +93,6 @@ public class CoroutineExample : MonoBehaviour
 
             yield return new WaitForSeconds(1.5f);
         }
+        CombatResultJudgement(myGang, enemyGang);
     }
 }
