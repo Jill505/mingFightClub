@@ -1152,6 +1152,263 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ad382b964e0154ab386b5ab577d321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackButton: {fileID: 0}
+  combatLogText: {fileID: 0}
+  playerGang:
+    GangName: "\u9810\u8A2D\u59D3"
+    pop: 100
+    cult: 100
+    money: 30
+    myLands:
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+  enemyGang:
+    GangName: "\u9810\u8A2D\u59D3"
+    pop: 100
+    cult: 100
+    money: 30
+    myLands:
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+  combatSpeed: 1.5
 --- !u!1 &420854807
 GameObject:
   m_ObjectHideFlags: 0
@@ -10371,6 +10628,307 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1981353611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1981353613}
+  - component: {fileID: 1981353612}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1981353612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981353611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ad382b964e0154ab386b5ab577d321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackButton: {fileID: 0}
+  combatLogText: {fileID: 0}
+  playerGang:
+    GangName: "\u9810\u8A2D\u59D3"
+    pop: 100
+    cult: 100
+    money: 30
+    myLands:
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+  enemyGang:
+    GangName: "\u9810\u8A2D\u59D3"
+    pop: 100
+    cult: 100
+    money: 30
+    myLands:
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+    - areaName: "\u5C71"
+      unlock: 0
+      belongingGang: 
+      landPopulation: 100
+      landMoney: 30
+      buildingUnlockA: 0
+      buildingUnlockRequireMoneyA: 100
+      buildingUnlockB: 0
+      buildingUnlockRequireMoneyB: 100
+      buildingUnlockC: 0
+      buildingUnlockRequireMoneyC: 100
+  combatSpeed: 1.5
+--- !u!4 &1981353613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981353611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 253.18414, y: 144.74161, z: -2.3957906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008587159
 GameObject:
   m_ObjectHideFlags: 0
@@ -10850,3 +11408,4 @@ SceneRoots:
   - {fileID: 1100814304}
   - {fileID: 1723892929}
   - {fileID: 1111119170}
+  - {fileID: 1981353613}
