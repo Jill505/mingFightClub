@@ -6,7 +6,7 @@ using System.Collections;
 public class CombatManager : MonoBehaviour
 {
     public Button attackButton;
-    public TextMeshProUGUI combatLogText;
+    public Text combatLogText;
 
     public Gang playerGang;
     public Gang enemyGang;

@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69105d0d3067e4cae5541cc72b78b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackButton: {fileID: 0}
-  combatLogText: {fileID: 0}
+  attackButton: {fileID: 522640593}
+  combatLogText: {fileID: 349129451}
   playerGang:
     GangName: "\u9810\u8A2D\u59D3"
     pop: 100
@@ -1357,7 +1357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &385773339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4747,8 +4747,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281874488
-  m_fontColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5986,7 +5986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &866830641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6776,7 +6776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1100814301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9881,7 +9881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1723892928
 MonoBehaviour:
   m_ObjectHideFlags: 0
