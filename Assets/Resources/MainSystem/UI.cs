@@ -66,6 +66,7 @@ public class UI : MonoBehaviour
 
             if (hit != null && hit.gameObject.TryGetComponent<LandInformation>(out LandInformation info))
             {
+                Debug.Log("¶}±Ò");
                 LandShowcase.SetActive(true);
                 TainanMap.SetActive(false);
                 info.showContext();
