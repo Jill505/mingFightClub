@@ -5,6 +5,7 @@ using System;
 using static SaveFile;
 using System.Security.Cryptography.X509Certificates;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject TainanMap;
     [SerializeField] GameObject PlayerUIManager;
     [SerializeField] AllGameManager allGameManager;
+    public GameObject bg;
 
     [Header("區域面板")]
     public GameObject LandShowcase;
@@ -189,6 +191,7 @@ public class UI : MonoBehaviour
     {
         LandShowcase.SetActive(false);
         TainanMap.SetActive(true);
+        bg.SetActive(false);
     }
 
 
@@ -197,5 +200,11 @@ public class UI : MonoBehaviour
         StartMenu.SetActive(false); //隱藏 StartMenu
         TainanMap.SetActive(true); //隱藏 StartMenu
         PlayerUIManager.SetActive(true);
+    }
+
+    public void ReStart()
+    {
+        Destroy(GameObject.Find("AllGameManager")); // 清除殘留的 GameManager
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -75,7 +75,7 @@ public class SaveFile
 
         public void InitializationPlayerData()
         {
-            population = 30;
+            population = 100;
             money = 100;
         }
     }

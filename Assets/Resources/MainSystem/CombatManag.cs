@@ -7,6 +7,8 @@ public class CombatManager : MonoBehaviour
 {
     public Button attackButton;
     public Text combatLogText;
+    public GameObject bg;
+    public GameObject gameOver;
 
     public Gang playerGang;
     public Gang enemyGang;
@@ -16,6 +18,7 @@ public class CombatManager : MonoBehaviour
         attackButton.onClick.AddListener(() =>
         {
             attackButton.interactable = false;  // 開始戰鬥時關閉按鈕避免重複點擊
+            bg.SetActive(true);
             StartCoroutine(FightCoroutine());
         });
     }
@@ -66,14 +69,16 @@ public class CombatManager : MonoBehaviour
         if (playerGang.pop <= 0)
         {
             combatLogText.text = "你被擊敗了！遊戲結束。";
+            yield return new WaitForSeconds(2.5f);
+            gameOver.SetActive(true);
         }
         else if (enemyGang.pop <= 0)
         {
             combatLogText.text = "敵方被擊敗，你勝利了！";
             enemyGang.GangOut();
         }
-
         attackButton.interactable = true; // 戰鬥結束重新開啟按鈕
+        StopCoroutine(FightCoroutine());
     }
 }
 
